@@ -17,9 +17,7 @@ import java.sql.SQLException;
 public class superController {
     public void begin(){
         Javalin app = Javalin.create().start(7777);
-        //post commands
-        //user controller methods
-        //works
+        
         app.post("/register", ctx -> {userDao udao = new userDao();
                                             userService userv = new userService(udao);
                                             User temp = ctx.bodyAsClass(User.class);
@@ -27,7 +25,7 @@ public class superController {
                                             ctx.status(200);
                                             ctx.json(success);
                                             });
-        //works
+
         app.post("/login", ctx -> {userDao udao = new userDao();
                                         AuthDto auth = ctx.bodyAsClass(AuthDto.class);
                                         userService userv = new userService(udao);
@@ -43,7 +41,6 @@ public class superController {
                                         }
                                         });
 
-        //works
         app.post("/update", ctx -> {userDao udao = new userDao();
                                          userService userv = new userService(udao);
                                          User temp = ctx.bodyAsClass(User.class);
@@ -52,8 +49,7 @@ public class superController {
                                          ctx.json(updUser);
                                         });
 
-        //account controller methods
-        //works
+
         app.post("create/{uID}", ctx ->{accountDao adao = new accountDao();
                                              accountService aserv = new accountService(adao);
                                              //int parseID = Integer.parseInt(ctx.pathParam("uID"));
@@ -64,7 +60,6 @@ public class superController {
                                              ctx.json(success);
                                              });
 
-        //works
         app.post("/accounts/{aID}/withdraw/{amount}", ctx -> {
             accountDao adao = new accountDao();
             accountService aserv = new accountService(adao);
@@ -77,7 +72,6 @@ public class superController {
         });
 
 
-        //works
         app.post("/accounts/{aID}/deposit/{amount}", ctx -> {
             accountDao adao = new accountDao();
             accountService aserv = new accountService(adao);
@@ -89,7 +83,6 @@ public class superController {
             ctx.result("Resultant balance is: " + temp.getBalance());
         });
 
-        //works
         app.post("/accounts/{aID}/transfer/{amount}/{rcvrID}", ctx ->{
             accountDao adao = new accountDao();
             accountService aserv = new accountService(adao);
@@ -102,10 +95,7 @@ public class superController {
             ctx.status(200);
             ctx.result("Resultant sender balance is: " + sender.getBalance() + "\n Receiver balance is now: " + receiver.getBalance());
         });
-        //end of post commands
 
-        //get commands
-        //womp womp
         app.get("/accounts/{aID}/transacHistory", ctx -> {
             transactionDao tdao = new transactionDao();
             transactionService tserv = new transactionService();
@@ -115,7 +105,6 @@ public class superController {
             ctx.result((InputStream) history);
         });
 
-        //womp womp
         app.get("/users/{uID}/accounts", ctx -> {
             accountDao adao = new accountDao();
             accountService aserv = new accountService(adao);
@@ -134,7 +123,6 @@ public class superController {
             ctx.json(aidMatch);
         });
 
-        //works
         app.get("/users/{username}", ctx -> {
             userDao udao = new userDao();
             userService userv = new userService(udao);
@@ -152,10 +140,7 @@ public class superController {
             ctx.status(200);
             ctx.json(user);
         });
-        //end of get commands
-
-        //delete commands
-        //works
+   
         app.delete("/accounts/{aID}", ctx -> {
             accountDao adao = new accountDao();
             accountService aserv = new accountService(adao);
@@ -169,6 +154,5 @@ public class superController {
                 ctx.status(450);
             }
         });
-        //end of delete commands
     }
 }
