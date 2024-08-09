@@ -4,10 +4,10 @@ Created a restful API for a banking application that exposes CRUD functionality.
 
 Roles/Responsibilities:
 
-Implemented CRUD functionality for a banking application.
-Worked with Javalin, Java, and PostgreSQL to do so.
-Adhered to restful principles.
-Developed a 3 layer architecture consisting of DAO, service layer, controllers.
-API was successfully tested using Postman.
+* Implemented CRUD functionality for a banking application.
+* Worked with Javalin, Java, and PostgreSQL to do so.
+* Adhered to restful principles.
+* Developed a 3 layer architecture consisting of DAO, service layer, controllers.
+* API was successfully tested using Postman.
 
 
