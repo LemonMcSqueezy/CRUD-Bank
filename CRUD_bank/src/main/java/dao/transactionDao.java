@@ -10,14 +10,11 @@ import java.util.List;
 //finish later
 
 public class transactionDao {
-    //private final Connection connection;
+
     public transactionDao(){
 
     }
 
-    /*public transactionDao(Connection connection) throws SQLException, IOException, ClassNotFoundException {
-        this.connection = connectionUtil.getConnection();
-    }*/
 
     public List<Transaction>transactionById(Integer aID){
         List<Transaction> history = new ArrayList<>();
