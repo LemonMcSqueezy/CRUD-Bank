@@ -5,15 +5,10 @@ import UML.User;
 import utils.connectionUtil;
 
 public class userDao {
-    //private final Connection connection;
 
     public userDao(){
 
     }
-
-    /*public userDao(Connection connection) throws SQLException, IOException, ClassNotFoundException {
-        this.connection = connectionUtil.getConnection();
-    }*/
 
     public void registration(User user) throws SQLException, IOException, ClassNotFoundException {
         if(user.getuID() == null){
