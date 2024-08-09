@@ -8,15 +8,11 @@ import UML.Account;
 import utils.connectionUtil;
 
 public class accountDao  {
-    //private final Connection connection;
+
 
     public accountDao(){
 
     }
-
-    /*public accountDao(Connection connection) throws SQLException, IOException, ClassNotFoundException {
-        this.connection = connectionUtil.getConnection();
-    }*/
 
     public void create(Account acct){
         try{
